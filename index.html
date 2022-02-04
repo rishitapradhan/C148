@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script src="https://aframe.io/releases/1.0.4/aframe.min.js"></script>
+    </head>
+    <body>
+        <a-scene background="color: white">
+            <a-camera position="0 8 15"></a-camera>
+
+
+
+<!--load assets-->
+            <a-asset timeout="10000">
+                <a-asset-item id="tree" src="./models/tree_for_games/scene.gltf"></a-asset-item>
+                <a-asset-item id="photographer" src="./models/photographer/scene.gltf"></a-asset-item>    
+                <a-asset-item id="peacock" src="./models/peacock/scene.gltf"></a-asset-item>     
+                <a-asset-item id="giraffe" src="./models/giraffe/scene.gltf"></a-asset-item>            
+            </a-asset>
+            <a-sky src="https://t4.ftcdn.net/jpg/01/32/97/75/360_F_132977510_GFtuuk94bneWvY9OQqVABu27MEf8HORO.jpg">  
+
+<!--light-->
+            <a-entity light="type:ambient; intensity:0.5">
+            </a-entity>
+            
+            <a-entity light="type:directional; intensity:1 castShadow:true; distance:50; decay:2; color:yellow" position="-80 100 20" >
+            </a-entity>
+
+<!--plane ground-->
+            <a-circle position="-0.4 -0.76 -25" rotation="-90 0 0" radius="100" color="#2E6F10" shadow="recieve:true" visibilty="true">
+            </a-circle>
+
+<!--asset positioning-->
+            <a-entity>
+                <a-entity position="-5 2 0" rotation="0 55 0" gltf-model="#peacock" scale="0.5 0.5 0.5" shadow="cast:true; recieve:false">
+                </a-entity>
+            </a-entity>
+
+            <a-entity>
+                <a-entity position="-15 8 0" rotation="0 120 0" gltf-model="#giraffe" scale="1.5 1.5 1.5" shadow="cast:true; recieve:false">
+                </a-entity>
+            </a-entity>
+
+            <a-entity>
+                <a-entity position="20 2 0" rotation="0 -90 0" gltf-model="#photographer" scale="1 1 1" shadow="cast:true; recieve:false">
+                </a-entity>
+            </a-entity>
+
+            <a-entity>
+                <a-entity position="25 2 0" rotation="0 -90 0" gltf-model="#tree" scale="0.02 0.02 0.02" shadow="cast:true; recieve:false">
+                </a-entity>
+            </a-entity>
+
+            <a-entity>
+                <a-entity position="25 2 0" rotation="0 -90 0" gltf-model="#tree" scale="0.02 0.02 0.02" shadow="cast:true; recieve:false">
+                </a-entity>
+            </a-entity>
+
+        </a-scene>
+    </body>
+</html>
+
+
